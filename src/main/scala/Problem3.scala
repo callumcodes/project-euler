@@ -11,14 +11,14 @@ object Problem3 {
    */
 
 
-  lazy val solution: BigInt = {
+  lazy val solution: Int = {
     primeFactors(BigInt("600851475143")).max
   }
 
-  def primeFactors(n: BigInt): List[BigInt] = {
+  def primeFactors(n: BigInt): List[Int] = {
 
     @tailrec
-    def go(value: BigInt, factors: List[BigInt], remainingPrimes: Stream[BigInt]): List[BigInt] = {
+    def go(value: BigInt, factors: List[Int], remainingPrimes: Stream[Int]): List[Int] = {
       value match {
         case x if x <= 1 => factors
         case x =>
@@ -36,6 +36,6 @@ object Problem3 {
 
   private def isDivisibleBy(x: BigInt, n: BigInt) = x % n == 0
 
-  val primes = BigInt(2) #:: Stream.range(start = BigInt(3), end = BigInt("999999999999"), step = BigInt(2)).filter(isPrime)
-  private def isPrime(n: BigInt): Boolean = primes.takeWhile(p => p * p <= n).forall(n % _ != 0)
+  val primes = 2 #:: Stream.from(3, 2).filter(isPrime)
+  private def isPrime(n: Int): Boolean = primes.takeWhile(p => p * p <= n).forall(n % _ != 0)
 }
