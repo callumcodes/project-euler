@@ -2,7 +2,7 @@ import org.scalatest.{AppendedClues, FlatSpec, Matchers}
 
 class Problem4Spec extends FlatSpec with Matchers with AppendedClues {
 
-  "solution" should "Find the largest prime factor of 600851475143" in {
+  "solution" should "Find the largest palindrome made from the product of two 3-digit numbers" in {
     Problem4.solution shouldBe 906609
   }
 
