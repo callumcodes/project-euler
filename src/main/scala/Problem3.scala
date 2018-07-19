@@ -1,5 +1,3 @@
-import java.math.BigInteger
-
 import scala.annotation.tailrec
 
 object Problem3 {
