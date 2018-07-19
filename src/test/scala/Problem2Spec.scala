@@ -2,7 +2,7 @@ import org.scalatest.{AppendedClues, FlatSpec, Matchers}
 
 class Problem2Spec extends FlatSpec with Matchers with AppendedClues {
 
-  "solution" should "Find the sum of all the multiples of 3 or 5 below 1000." in {
+  "solution" should "Find the sum of even fib numbers below 4 million" in {
     Problem2.solution shouldBe 4613732
   }
 
