@@ -1,4 +1,4 @@
-name := "kata-name-here"
+name := "project-euler"
 
 version := "0.1"
 
