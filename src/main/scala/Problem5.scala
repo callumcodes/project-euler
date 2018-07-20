@@ -32,15 +32,15 @@ object Problem5 {
 
     @tailrec
     def go(value: Int, factors: List[Int], remainingPrimes: Stream[Int]): List[Int] = {
-      value match {
-        case x if x <= 1 => factors
-        case x =>
-          val current = remainingPrimes.head
-          if (isDivisibleBy(value, current)) {
-            go(value / current, current :: factors, remainingPrimes)
-          } else {
-            go(value, factors, remainingPrimes.drop(1))
-          }
+
+      if (value <= 1) factors
+      else {
+        val currentPrime = remainingPrimes.head
+        if (isDivisibleBy(value, currentPrime)) {
+          go(value / currentPrime, currentPrime :: factors, remainingPrimes)
+        } else {
+          go(value, factors, remainingPrimes.drop(1))
+        }
       }
     }
 
